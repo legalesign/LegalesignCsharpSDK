@@ -153,7 +153,6 @@ namespace LegalesignTest
             this.txtSecretKey.Name = "txtSecretKey";
             this.txtSecretKey.Size = new System.Drawing.Size(168, 20);
             this.txtSecretKey.TabIndex = 1;
-            this.txtSecretKey.Text = "a3e62652855b60ec53656132cd50e7d36dee82b6";
             // 
             // txtUsername
             // 

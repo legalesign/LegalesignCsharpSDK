@@ -129,12 +129,10 @@ namespace LegalesignTest
             //You must provide group id as lowercase
             DocumentPost dp = new DocumentPost(
                 group: $"/api/v1/group/{txtGroupName.Text.ToLower()}/",
-                name: "dotnetdocument",
-                template: txtPDFLocation.Text,
+                name: "dotnetdocument2",
+                templatepdf: txtPDFLocation.Text,
                 signers: signers,
-                doEmail: true,
-                footerHeight: 30,
-                footer: "Legalesign ID: {{doc_id}}");
+                doEmail: true);
 
             try
             {

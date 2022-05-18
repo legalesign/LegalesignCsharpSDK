@@ -134,7 +134,9 @@ our next example we see how to upload a PDF for us to send to signers, and get t
 
 ### Upload and send a PDF
 
-You will most likely use text-tags within your PDFs, to define where people will sign or fill out any forms.
+You will most likely use text-tags within your PDFs, to define where people will sign or fill out any forms. Using the
+`processTags=true` parameter lets the system know to look through your document and make fields for
+information and signatures for the recipient to sign.
 
 Lets upload a PDF using the 'with_http_info' version of the POST request to get the ID:
 
