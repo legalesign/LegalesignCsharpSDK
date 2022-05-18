@@ -4,9 +4,9 @@ Legalesign.com is an electronic signature software. This is the documentation fo
 
 Start by creating a trial account at https://access.legalesign.com/?q=signUp. Upon account activation, select the API dev option.  
 
-Get an API key by emailing support@legalesign with background on your use-case and skills. You will need to show experience in API dev.  
+Get an API key by emailing support@legalesign.com with background on your use-case and skills. You will need to show experience in API dev.  
 
-You will start in sandbox mode and limited to 5 signers. Add your test signers on https://app1.legalesign.com/acc/settings/#api. You will also find your API username and secret at the same location. 
+You will start in sandbox mode and limited to 5 signers. Add your test signers on https://app1.legalesign.com/acc/settings/#api. You will also find your API username and secret there. 
 
 The format for your API key (referred to as YOUR_API_KEY in the documentation) is: 'ApiKey username:secret'. Contact support to move to production mode when you are ready. 
 
