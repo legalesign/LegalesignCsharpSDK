@@ -16,9 +16,9 @@ Your api key goes in the "Authorization" header, and takes the form: Apikey user
 
 With you git tools of choice clone the C# SDK repository.
 
-'''
+```
 git clone https://github.com/legalesign/LegalesignCsharpSDK.git legalesignSDK
-'''
+```
 
 ### Configure the Example project
 
