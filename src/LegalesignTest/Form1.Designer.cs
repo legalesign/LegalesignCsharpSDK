@@ -45,6 +45,8 @@ namespace LegalesignTest
             this.btnPost = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUploadPdf = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -175,9 +177,10 @@ namespace LegalesignTest
             this.flowLayoutPanel1.Controls.Add(this.btnGroupDetails);
             this.flowLayoutPanel1.Controls.Add(this.btnCall);
             this.flowLayoutPanel1.Controls.Add(this.btnPost);
+            this.flowLayoutPanel1.Controls.Add(this.btnUploadPdf);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 19);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(171, 137);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(219, 195);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // groupBox2
@@ -189,6 +192,20 @@ namespace LegalesignTest
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Test Calls";
+            // 
+            // btnUploadPdf
+            // 
+            this.btnUploadPdf.Location = new System.Drawing.Point(3, 119);
+            this.btnUploadPdf.Name = "btnUploadPdf";
+            this.btnUploadPdf.Size = new System.Drawing.Size(163, 23);
+            this.btnUploadPdf.TabIndex = 8;
+            this.btnUploadPdf.Text = "Upload PDF";
+            this.btnUploadPdf.UseVisualStyleBackColor = true;
+            this.btnUploadPdf.Click += new System.EventHandler(this.btnUploadPdf_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -226,6 +243,8 @@ namespace LegalesignTest
         private System.Windows.Forms.Button btnPost;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnUploadPdf;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

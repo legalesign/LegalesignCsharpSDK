@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Org.OpenAPITools.Client;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Model;
+using System.IO;
 
 namespace LegalesignTest
 {
@@ -81,6 +82,38 @@ namespace LegalesignTest
             }
             
 
+        }
+
+        private void btnUploadPdf_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                TemplatepdfApi pdf = new TemplatepdfApi(makeConfig());
+
+                // Get the file and convert the contents to a base64 byte array.
+                Byte[] bytes = File.ReadAllBytes(openFileDialog1.FileName);
+                String contents = Convert.ToBase64String(bytes);
+                Byte[] encodedBytes = Convert.FromBase64String(contents);
+
+                try
+                {
+                    // Upload the pdf for our group to use with a title and a tag
+                    ApiResponse<object> response = pdf.PostPdfTemplateWithHttpInfo(new TemplatePdfFieldPost(group: $"/api/v1/group/{txtGroupName.Text.ToLower()}/",
+                        pdfFile: encodedBytes, processTags: true, title: "test tagged document"));
+
+                    // Just to demonstrate how to read response headers we'll put the returned
+                    // header in the output rich text box. The 'Location' header contains the new
+                    // Template ID.
+                    richTextBox1.Text = response.Headers["Location"];
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
     }
 }
