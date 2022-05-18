@@ -11,11 +11,16 @@ using Org.OpenAPITools.Client;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Model;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace LegalesignTest
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// The simplest examples with minimal error handling to keep the examples
+        /// as clear as possible.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -23,8 +28,7 @@ namespace LegalesignTest
 
         private Configuration makeConfig() {
             Configuration c = new Configuration();
-            //c.BasePath = "https://lon-dev.legalesign.com/api/v1";
-            c.AddApiKey("Authorization", "ApiKey " + txtUsername.Text + ":" + txtSecretKey.Text);
+            c.AddApiKey("Authorization", $"ApiKey {txtUsername.Text}:{txtSecretKey.Text}");
             
             return c;
         }
@@ -55,18 +59,16 @@ namespace LegalesignTest
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            
-
             DocumentApi docs = new DocumentApi(makeConfig());
 
             List<DocumentSignerPost> signers = new List<DocumentSignerPost>();
-            signers.Add(new DocumentSignerPost(email: "alex.weinle@legalesign.com", firstname: "Alex", lastname:"Weinle"));
+            signers.Add(new DocumentSignerPost(email: txtEmail.Text, firstname: txtFirstname.Text, lastname: txtLastname.Text));
 
             //You must provide group id as lowercase
             DocumentPost dp = new DocumentPost(
                 group: $"/api/v1/group/{txtGroupName.Text.ToLower()}/",
                 name: "dotnetdocument",
-                text: "<h1>C Sharp Agreement</h1><p>terms as follows:: <span class=\"field\" data-optional=\"false\" data-name=\"Please add your ...\" data-idx=\"0\" data-signee=\"1\" data-type=\"signature\" data-options=\"\"> ....... </span></p>",
+                text: rtbBodyHTML.Text,
                 signers: signers,
                 doEmail: true,
                 footerHeight:30,
@@ -80,8 +82,6 @@ namespace LegalesignTest
             catch (Exception ex) {
                 throw ex;
             }
-            
-
         }
 
         private void btnUploadPdf_Click(object sender, EventArgs e)
@@ -106,13 +106,44 @@ namespace LegalesignTest
                     // Just to demonstrate how to read response headers we'll put the returned
                     // header in the output rich text box. The 'Location' header contains the new
                     // Template ID.
-                    richTextBox1.Text = response.Headers["Location"];
+                    richTextBox1.Text = JsonConvert.SerializeObject(response.Headers);
+                    
+                    // We'll save this so we can use it when calling Send with Template
+                    txtPDFLocation.Text = response.Headers["Location"];
 
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
+            }
+        }
+
+        private void btnSendTemplate_Click(object sender, EventArgs e)
+        {
+            DocumentApi docs = new DocumentApi(makeConfig());
+
+            List<DocumentSignerPost> signers = new List<DocumentSignerPost>();
+            signers.Add(new DocumentSignerPost(email: txtEmail.Text, firstname: txtFirstname.Text, lastname: txtLastname.Text));
+
+            //You must provide group id as lowercase
+            DocumentPost dp = new DocumentPost(
+                group: $"/api/v1/group/{txtGroupName.Text.ToLower()}/",
+                name: "dotnetdocument",
+                template: txtPDFLocation.Text,
+                signers: signers,
+                doEmail: true,
+                footerHeight: 30,
+                footer: "Legalesign ID: {{doc_id}}");
+
+            try
+            {
+                InlineResponse201 resp = docs.PostDocument(dp);
+                richTextBox1.Text = resp.ToJson();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

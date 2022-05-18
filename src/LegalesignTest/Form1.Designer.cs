@@ -44,9 +44,18 @@ namespace LegalesignTest
             this.rtbBodyHTML = new System.Windows.Forms.RichTextBox();
             this.btnPost = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnUploadPdf = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtPDFLocation = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSendTemplate = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFirstname = new System.Windows.Forms.TextBox();
+            this.txtLastname = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,6 +91,14 @@ namespace LegalesignTest
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtLastname);
+            this.groupBox1.Controls.Add(this.txtFirstname);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtPDFLocation);
             this.groupBox1.Controls.Add(this.txtGroupName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -90,22 +107,23 @@ namespace LegalesignTest
             this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 154);
+            this.groupBox1.Size = new System.Drawing.Size(261, 244);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Configuration";
             // 
             // txtGroupName
             // 
-            this.txtGroupName.Location = new System.Drawing.Point(87, 97);
+            this.txtGroupName.Location = new System.Drawing.Point(87, 94);
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(168, 20);
             this.txtGroupName.TabIndex = 5;
+            this.txtGroupName.Text = "legalesigndev";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 101);
+            this.label3.Location = new System.Drawing.Point(14, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 4;
@@ -114,7 +132,7 @@ namespace LegalesignTest
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 72);
+            this.label2.Location = new System.Drawing.Point(14, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 3;
@@ -131,10 +149,11 @@ namespace LegalesignTest
             // 
             // txtSecretKey
             // 
-            this.txtSecretKey.Location = new System.Drawing.Point(87, 68);
+            this.txtSecretKey.Location = new System.Drawing.Point(87, 65);
             this.txtSecretKey.Name = "txtSecretKey";
             this.txtSecretKey.Size = new System.Drawing.Size(168, 20);
             this.txtSecretKey.TabIndex = 1;
+            this.txtSecretKey.Text = "a3e62652855b60ec53656132cd50e7d36dee82b6";
             // 
             // txtUsername
             // 
@@ -142,6 +161,7 @@ namespace LegalesignTest
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(168, 20);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "60d5cd89-0875-4dfe-b96b-f2780968007e";
             // 
             // btnGetDocuments
             // 
@@ -178,20 +198,11 @@ namespace LegalesignTest
             this.flowLayoutPanel1.Controls.Add(this.btnCall);
             this.flowLayoutPanel1.Controls.Add(this.btnPost);
             this.flowLayoutPanel1.Controls.Add(this.btnUploadPdf);
+            this.flowLayoutPanel1.Controls.Add(this.btnSendTemplate);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 19);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(219, 195);
             this.flowLayoutPanel1.TabIndex = 8;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 173);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(261, 335);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Test Calls";
             // 
             // btnUploadPdf
             // 
@@ -203,9 +214,96 @@ namespace LegalesignTest
             this.btnUploadPdf.UseVisualStyleBackColor = true;
             this.btnUploadPdf.Click += new System.EventHandler(this.btnUploadPdf_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox2.Location = new System.Drawing.Point(12, 262);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(261, 246);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Test Calls";
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtPDFLocation
+            // 
+            this.txtPDFLocation.Location = new System.Drawing.Point(87, 210);
+            this.txtPDFLocation.Name = "txtPDFLocation";
+            this.txtPDFLocation.Size = new System.Drawing.Size(168, 20);
+            this.txtPDFLocation.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 214);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "PDF Location";
+            // 
+            // btnSendTemplate
+            // 
+            this.btnSendTemplate.Location = new System.Drawing.Point(3, 148);
+            this.btnSendTemplate.Name = "btnSendTemplate";
+            this.btnSendTemplate.Size = new System.Drawing.Size(163, 23);
+            this.btnSendTemplate.TabIndex = 9;
+            this.btnSendTemplate.Text = "Send With Template";
+            this.btnSendTemplate.UseVisualStyleBackColor = true;
+            this.btnSendTemplate.Click += new System.EventHandler(this.btnSendTemplate_Click);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(87, 123);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(168, 20);
+            this.txtEmail.TabIndex = 8;
+            this.txtEmail.Text = "alex.weinle@legalesign.com";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Email";
+            // 
+            // txtFirstname
+            // 
+            this.txtFirstname.Location = new System.Drawing.Point(87, 152);
+            this.txtFirstname.Name = "txtFirstname";
+            this.txtFirstname.Size = new System.Drawing.Size(168, 20);
+            this.txtFirstname.TabIndex = 10;
+            this.txtFirstname.Text = "Lex";
+            // 
+            // txtLastname
+            // 
+            this.txtLastname.Location = new System.Drawing.Point(87, 181);
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.Size = new System.Drawing.Size(168, 20);
+            this.txtLastname.TabIndex = 11;
+            this.txtLastname.Text = "Api";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "First Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 185);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Last Name";
             // 
             // Form1
             // 
@@ -245,6 +343,15 @@ namespace LegalesignTest
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnUploadPdf;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPDFLocation;
+        private System.Windows.Forms.Button btnSendTemplate;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtLastname;
+        private System.Windows.Forms.TextBox txtFirstname;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }
 
