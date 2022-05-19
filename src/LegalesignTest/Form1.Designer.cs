@@ -34,6 +34,14 @@ namespace LegalesignTest
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnGroupDetails = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtLastname = new System.Windows.Forms.TextBox();
+            this.txtFirstname = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPDFLocation = new System.Windows.Forms.TextBox();
             this.txtGroupName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,17 +53,9 @@ namespace LegalesignTest
             this.btnPost = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUploadPdf = new System.Windows.Forms.Button();
+            this.btnSendTemplate = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtPDFLocation = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSendTemplate = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtFirstname = new System.Windows.Forms.TextBox();
-            this.txtLastname = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,13 +112,76 @@ namespace LegalesignTest
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Configuration";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 185);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Last Name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "First Name";
+            // 
+            // txtLastname
+            // 
+            this.txtLastname.Location = new System.Drawing.Point(87, 181);
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.Size = new System.Drawing.Size(168, 20);
+            this.txtLastname.TabIndex = 11;
+            // 
+            // txtFirstname
+            // 
+            this.txtFirstname.Location = new System.Drawing.Point(87, 152);
+            this.txtFirstname.Name = "txtFirstname";
+            this.txtFirstname.Size = new System.Drawing.Size(168, 20);
+            this.txtFirstname.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(87, 123);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(168, 20);
+            this.txtEmail.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 214);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "PDF Location";
+            // 
+            // txtPDFLocation
+            // 
+            this.txtPDFLocation.Location = new System.Drawing.Point(87, 210);
+            this.txtPDFLocation.Name = "txtPDFLocation";
+            this.txtPDFLocation.Size = new System.Drawing.Size(168, 20);
+            this.txtPDFLocation.TabIndex = 6;
+            // 
             // txtGroupName
             // 
             this.txtGroupName.Location = new System.Drawing.Point(87, 94);
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(168, 20);
             this.txtGroupName.TabIndex = 5;
-            this.txtGroupName.Text = "legalesigndev";
             // 
             // label3
             // 
@@ -160,7 +223,6 @@ namespace LegalesignTest
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(168, 20);
             this.txtUsername.TabIndex = 0;
-            this.txtUsername.Text = "60d5cd89-0875-4dfe-b96b-f2780968007e";
             // 
             // btnGetDocuments
             // 
@@ -213,6 +275,16 @@ namespace LegalesignTest
             this.btnUploadPdf.UseVisualStyleBackColor = true;
             this.btnUploadPdf.Click += new System.EventHandler(this.btnUploadPdf_Click);
             // 
+            // btnSendTemplate
+            // 
+            this.btnSendTemplate.Location = new System.Drawing.Point(3, 148);
+            this.btnSendTemplate.Name = "btnSendTemplate";
+            this.btnSendTemplate.Size = new System.Drawing.Size(163, 23);
+            this.btnSendTemplate.TabIndex = 9;
+            this.btnSendTemplate.Text = "Send With Template";
+            this.btnSendTemplate.UseVisualStyleBackColor = true;
+            this.btnSendTemplate.Click += new System.EventHandler(this.btnSendTemplate_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.flowLayoutPanel1);
@@ -226,83 +298,6 @@ namespace LegalesignTest
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // txtPDFLocation
-            // 
-            this.txtPDFLocation.Location = new System.Drawing.Point(87, 210);
-            this.txtPDFLocation.Name = "txtPDFLocation";
-            this.txtPDFLocation.Size = new System.Drawing.Size(168, 20);
-            this.txtPDFLocation.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 214);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "PDF Location";
-            // 
-            // btnSendTemplate
-            // 
-            this.btnSendTemplate.Location = new System.Drawing.Point(3, 148);
-            this.btnSendTemplate.Name = "btnSendTemplate";
-            this.btnSendTemplate.Size = new System.Drawing.Size(163, 23);
-            this.btnSendTemplate.TabIndex = 9;
-            this.btnSendTemplate.Text = "Send With Template";
-            this.btnSendTemplate.UseVisualStyleBackColor = true;
-            this.btnSendTemplate.Click += new System.EventHandler(this.btnSendTemplate_Click);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(87, 123);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(168, 20);
-            this.txtEmail.TabIndex = 8;
-            this.txtEmail.Text = "alex.weinle@legalesign.com";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Email";
-            // 
-            // txtFirstname
-            // 
-            this.txtFirstname.Location = new System.Drawing.Point(87, 152);
-            this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(168, 20);
-            this.txtFirstname.TabIndex = 10;
-            this.txtFirstname.Text = "Lex";
-            // 
-            // txtLastname
-            // 
-            this.txtLastname.Location = new System.Drawing.Point(87, 181);
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(168, 20);
-            this.txtLastname.TabIndex = 11;
-            this.txtLastname.Text = "Api";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 156);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "First Name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 185);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Last Name";
             // 
             // Form1
             // 
